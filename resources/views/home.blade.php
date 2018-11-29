@@ -1,4 +1,16 @@
-@extends('layouts.app')
+@extends('layouts.tema')
+
+@section('usuario')
+<div class="user-panel">
+    <div class="pull-left image">
+        <img src="{{ asset('dist/img/user2-160x160.jpg')}}" class="img-circle" alt="User Image">
+    </div>
+    <p>Vista General</p>
+    <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+    <div class="pull-left info">
+    </div>
+</div>
+@endsection
 
 @section('content')
 <div class="container">

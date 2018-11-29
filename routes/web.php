@@ -12,7 +12,7 @@
  */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('integrantes.index');
 });
 
 Auth::routes();
@@ -20,3 +20,10 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('user', 'UserController');
+Route::resource('cartas', 'CartasController');
+Route::resource('actividades', 'ActividadController');
+Route::get('/integrantes/create/{grupo}', 'IntegranteController@create')->name('integrantes.create');
+Route::get('/integrantes/edit/{integrante}/{grupo}', 'IntegranteController@edit')->name('integrantes.edit');
+Route::resource('integrantes', 'IntegranteController')->except('create', 'edit');
+//Route::match(['get', 'post'], '/grupo-create', 'GrupoController@create')->name('grupo.create');
+Route::resource('grupos', 'GrupoController');//->middleware('auth', 'user');

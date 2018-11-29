@@ -2,18 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Grupo;
+use App\Actividad;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
-class GrupoController extends Controller
+class ActividadController extends Controller
 {
-    /*
-    public function __construct()
-    {
-        $this->middleware('auth')->only('show');
-        $this->middleware('user')->only('show');
-    }*/
     /**
      * Display a listing of the resource.
      *
@@ -21,12 +14,9 @@ class GrupoController extends Controller
      */
     public function index()
     {
-//$grupos = Grupo::all();
-        $grupos = Grupo::paginate(5);
-        return view('grupos.grupoIndex', compact('grupos'));
-//$grupos = DB::table('grupos')->simplePaginate(15);
-
-//        return view('grupos.grupoIndex', ['grupos' => $grupos]);
+        //
+        $actividades = Actividad::paginate(5);
+        return view('actividades.actividadIndex', compact('actividades'));
     }
 
     /**
@@ -53,27 +43,21 @@ class GrupoController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Grupo  $grupo
+     * @param  \App\Actividad  $actividad
      * @return \Illuminate\Http\Response
      */
-    public function show(Grupo $grupo)
+    public function show(Actividad $actividad)
     {
-/*
-        if (Auth::check()) {
-            $user = Auth::user();
-            dd($user->name);
-        }*/
-        //dd($grupo);
-        return view('grupos.grupoShow', compact('grupo'));
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Grupo  $grupo
+     * @param  \App\Actividad  $actividad
      * @return \Illuminate\Http\Response
      */
-    public function edit(Grupo $grupo)
+    public function edit(Actividad $actividad)
     {
         //
     }
@@ -82,10 +66,10 @@ class GrupoController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Grupo  $grupo
+     * @param  \App\Actividad  $actividad
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Grupo $grupo)
+    public function update(Request $request, Actividad $actividad)
     {
         //
     }
@@ -93,10 +77,10 @@ class GrupoController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Grupo  $grupo
+     * @param  \App\Actividad  $actividad
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Grupo $grupo)
+    public function destroy(Actividad $actividad)
     {
         //
     }

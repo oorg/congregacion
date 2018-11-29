@@ -31,7 +31,7 @@ class AddFkConstraintsToIntegrantes extends Migration
     public function down()
     {
         Schema::table('integrantes', function (Blueprint $table) {
-            $table->dropForeign('miembros_grupo_id_foreign');
+            $table->dropForeign('integrantes_grupo_id_foreign');
         });
     }
 }

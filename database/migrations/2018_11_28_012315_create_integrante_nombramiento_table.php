@@ -30,7 +30,6 @@ class CreateIntegranteNombramientoTable extends Migration
                 ->onDelete('cascade');
 
             $table->string('Comentario');
-            $table->date('Fecha');
             $table->unsignedInteger('edad');
 
             $table->timestamps();

@@ -14,16 +14,18 @@ class UsersTableSeeder extends Seeder
         DB::table('users')->insert([
             'name' => 'Admin',
             'password' => bcrypt('hola'),
-            'email' => 'admin@tsest.com',
+            'email' => 'admin@test.com',
             'remember_token' => str_random(10),
         ]);
 
         //factory(App\User::class, 5)->create()->each(function ($user) {
         //    $user->grupo()->save(factory(App\Grupo::class)->make());
         //});
-        factory(App\User::class, 5)->create()->each(function ($user) {
+        factory(App\User::class, 15)->create()->each(function ($user) {
             $grupo = $user->grupo()->save(factory(App\Grupo::class)->make());
-
+            $grupo->integrantes()->save(factory(App\Integrante::class)->make());
+            $grupo->integrantes()->save(factory(App\Integrante::class)->make());
+            $grupo->integrantes()->save(factory(App\Integrante::class)->make());
             $grupo->integrantes()->save(factory(App\Integrante::class)->make());
             $grupo->integrantes()->save(factory(App\Integrante::class)->make());
             $grupo->integrantes()->save(factory(App\Integrante::class)->make());

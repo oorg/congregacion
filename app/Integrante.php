@@ -27,4 +27,13 @@ class Integrante extends Model
         $this->attributes['telefono'] = $value;
         //$this->attributes['telefono'] = strtolower($value);
     }
+    public function actividad()
+    {
+        return $this->morphMany(Actividad::class, 'asignado');
+    }
+    public function nombramiento()
+    {
+        return $this->belongsToMany(Nombramiento::class)
+            ->withPivot('comentario', 'edad');
+    }
 }

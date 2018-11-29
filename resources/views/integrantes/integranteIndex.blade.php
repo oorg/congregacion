@@ -58,6 +58,7 @@
                                 <th>Edad</th>
                                 <th>Telefono</th>
                                 <th>Miembros desde</th>
+                                <th>Actividades</th>
                             </thead>
                             <tbody>
                                 @foreach($integrantes as $integrante)
@@ -73,6 +74,11 @@
                                         <td>{{ $integrante->edad }}</td>
                                         <td>{{ $integrante->telefono }}</td>
                                         <td>{{ $integrante->created_at }}</td>
+                                        <td>
+                                            <a class="btn btn-success" href="{{route('actividades.integrantes.index',$integrante->id)}}">
+                                                Actividades
+                                            </a>
+                                        </td>
                                     </tr>
                                 @endforeach
                             </tbody>

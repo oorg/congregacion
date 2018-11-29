@@ -32,24 +32,24 @@ Se espera un sistema web utilizando Laravel como framework de desarrollo.
 
 ## Eloquent (Modelos, consultas)
 
-* Tener al menos una relación de cada uno de los siguientes tipos y sus inversas:
+[x] * Tener al menos una relación de cada uno de los siguientes tipos y sus inversas:
 [x] * "uno a muchos" (1:n)
-  * "muchos a muchos" (n:n)
-  * polimórfica o polimórfica muchos a muchos.
-* Utilizar "Eager Loading" al consultar múltiples registros con n relaciones. with
+  [x] * "muchos a muchos" (n:n)
+  [x] * polimórfica o polimórfica muchos a muchos.
+[x] * Utilizar "Eager Loading" al consultar múltiples registros con n relaciones. with
 * Utilizar al menos en una consulta "Constraining Eager Load". load
 [x] * Declarar "fillable".
-* Almacenar información adicional en al menos una tabla pivote.
+[x] * Almacenar información adicional en al menos una tabla pivote.
 [x] * Implementar "time stamps" en al menos un modelo.
 * Implementar "Soft Delete" en al menos un modelo.
 [x] * Crear al menos un "accessor" y un "muttator" en al menos un modelo.
-* Agregar al menos un método tipo Scope en un modelo.
+[x] * Agregar al menos un método tipo Scope en un modelo.
 
 ## Controladores
 
 [x] * Crear al menos un controlador tipo resource.
 * **Extra:** Crear un controlador tipo resource anidado.
-* Crear al menos un controlador con al menos un método personalizado.
+[x] * Crear al menos un controlador con al menos un método personalizado.
 
 ## API
 
@@ -67,4 +67,4 @@ Se deberá crear e implementar un cargador de archivos que permita:
 
 ## Envío de correo electrónico
 
-* Enviar al menos una notificación vía correo electrónico.
+[x] * Enviar al menos una notificación vía correo electrónico.

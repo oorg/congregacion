@@ -15,13 +15,19 @@ Route::get('/', function () {
     return redirect()->route('integrantes.index');
 });
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('user', 'UserController');
 Route::resource('cartas', 'CartasController');
-Route::resource('actividades', 'ActividadController');
+Route::get('actividades/integrantes/{id}', 'ActividadController@intindex')->name('actividades.integrantes.index');
+Route::get('actividades/grupos/{id}', 'ActividadController@grpindex')->name('actividades.grupos.index');
+Route::post('actividades/create', 'ActividadController@create')->name('actividades.create');
+Route::resource('actividades', 'ActividadController')->except('create')->middleware('verified');;
+
+Route::get('nombramientos/{integrante}/{grupo}', 'NombramientoController@agrega')->name('nombramientos.agrega')->middleware('auth', 'user');
+Route::post('nombramientos/create', 'NombramientoController@create')->name('nombramiento.create');
 Route::get('/integrantes/create/{grupo}', 'IntegranteController@create')->name('integrantes.create');
 Route::get('/integrantes/edit/{integrante}/{grupo}', 'IntegranteController@edit')->name('integrantes.edit');
 Route::resource('integrantes', 'IntegranteController')->except('create', 'edit');

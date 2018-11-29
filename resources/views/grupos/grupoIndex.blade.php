@@ -38,6 +38,7 @@
                         <th>ID</th>
                         <th>Nombre</th>
                         <th>ID del usurio</th>
+                        <th>Actividades</th>
                     </thead>
                     <tbody>
                         @foreach($grupos as $grupo)
@@ -47,6 +48,11 @@
                                 </td>                                
                                 <td>{{ $grupo->nombre }}</td>
                                 <td>{{ $grupo->user->name }}</td>
+                                <td>
+                                    <a class="btn btn-success" href="{{route('actividades.grupos.index',$grupo->id)}}">
+                                        Actividades
+                                    </a>
+                                </td>
                             </tr>
                         @endforeach
                     </tbody>

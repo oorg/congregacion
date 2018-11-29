@@ -15,18 +15,16 @@
 
 @section('contenido')
     
-        <section class="invoice">
-          <!-- title row -->
-          <div class="row">
-            <div class="col-xs-12">
-              <h2 class="page-header">
-                <i class="fa fa-globe"></i> Integrantes de este grupo
-              </h2>
-            </div><!-- /.col -->
-          </div>
-
-
-
+<section class="invoice">
+    <!-- title row -->
+    <div class="row">
+    <div class="col-xs-12">
+        <h2 class="page-header">
+        <i class="fa fa-globe"></i> Integrantes de este grupo
+        </h2>
+    </div><!-- /.col -->
+    </div>
+    
 <div class="row">
     <div class="col-md-12">
         @include('partials.formErrors')
@@ -41,7 +39,7 @@
                     <thead>
                         <th>ID</th>
                         <th>Nombre</th>
-                        <th>ID del usurio</th>
+                        <th>Administrador</th>
                     </thead>
                     <tbody>
                         <tr>              
@@ -62,9 +60,8 @@
             <div class="card-header border-0">
                 <div class="custom-title-wrap bar-primary">
                     <div class="custom-title">Integrantes</div>
-                </div>
-            </div>
-            
+                    </div>
+                </div>            
                 <table class="table table-striped condensed">
                     <thead>
                         <tr>
@@ -72,6 +69,7 @@
                             <th>Nombre</th>
                             <th>Edad</th>
                             <th>Telefono</th>
+                            <th>Nombramiento</th>
                         </tr>
                     </thead>
                     @foreach($grupo->integrantes as $integrante)
@@ -83,14 +81,17 @@
                             <td>{{ $integrante->nombre }}</td>
                             <td>{{ $integrante->edad }}</td>
                             <td>{{ $integrante->telefono }}</td>
+                            <td>
+                                <a class="btn btn-sm btn-warning" href="{{ route('nombramientos.agrega', [$integrante->id, $grupo->id]) }}">Añadir √</a>
+                            </td> 
                         </tr>
                     @endforeach
                 </table>
             </div>
         </div>
-<hr>
-<a class="btn btn-success" href="{{ route('integrantes.create', $grupo->id) }}">Agregar integrante</a>
-<hr>
+        <hr>
+            <a class="btn btn-success" href="{{ route('integrantes.create', $grupo->id) }}">Agregar integrante</a>
+        <hr>
     </div>
 </div>
 

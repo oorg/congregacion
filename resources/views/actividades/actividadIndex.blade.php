@@ -40,16 +40,21 @@
                         <th>Actividad</th>
                         <th>Descripcion</th>
                         <th>Id Asignado</th>
-                        <th>Tipo de asignado</th>
                     </thead>
                     <tbody>
                             @foreach($actividades as $actividad)
                                 <tr>
-                                    <td>{{ $actividades->actividad }}</td>   
-                                    <td>{{ $actividades->actividad }}</td>
-                                    <td>{{ $actividades->actividad }}</td>   
-                                    <td>{{ $actividades->actividad }}</td>
-                                    <td>{{ $actividades->actividad }}</td>
+                                    <td>{{ $actividad->id }}</td>   
+                                    <td>{{ $actividad->actividad }}</td>
+                                    <td>{{ $actividad->descripcion }}</td>   
+                                    <td>
+                                        @if($actividad->asignado_type=="App\Integrante")
+                                        Integrante: 
+                                        @else
+                                        Grupo: 
+                                        @endif
+                                        {{$actividad->asignado->nombre}}
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>
@@ -62,7 +67,9 @@
                             <div class="alert alert-danger" role="alert">
                             No hay actividades registradas
                             </div>
+                            
                         @endif
+                    
             </div>
         </div>
     </div>

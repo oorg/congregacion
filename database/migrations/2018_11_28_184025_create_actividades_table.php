@@ -13,10 +13,12 @@ class CreateActividadesTable extends Migration
      */
     public function up()
     {
-        Schema::create('actividads', function (Blueprint $table) {
+        Schema::create('actividads', function (Blueprint $table) {//TODO: actividads2actividades
             $table->increments('id');
+
             $table->unsignedInteger('asignado_id');
             $table->string('asignado_type');
+
             $table->string('actividad');
             $table->string('descripcion');
 

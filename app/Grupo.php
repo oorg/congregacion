@@ -15,4 +15,9 @@ class Grupo extends Model
     {
         return $this->hasMany(Integrante::class);
     }
+
+    public function actividad()
+    {
+        return $this->morphMany(Actividad::class, 'asignado');
+    }
 }

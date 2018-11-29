@@ -2,7 +2,8 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatibl
+    e" content="IE=edge">
     <title>AdminLTE 2 | Dashboard</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -531,8 +532,7 @@
     </script>
     <!-- Bootstrap 3.3.5 -->
     <script src="{{ asset('bootstrap/js/bootstrap.min.js') }}"></script>
-    <!-- Morris.js charts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+    
     <script src="{{ asset('plugins/morris/morris.min.js') }}"></script>
     <!-- Sparkline -->
     <script src="{{ asset('plugins/sparkline/jquery.sparkline.min.js') }}"></script>
@@ -545,7 +545,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.2/moment.min.js"></script>
     <script src="{{ asset('plugins/daterangepicker/daterangepicker.js') }}"></script>
     <!-- datepicker -->
-    <script src="{{ asset('plugins/datepicker/bootstrap-datepicker.js') }}"></script>
     <!-- Bootstrap WYSIHTML5 -->
     <script src="{{ asset('plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js') }}"></script>
     <!-- Slimscroll -->
